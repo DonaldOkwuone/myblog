@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Naija Gunner
+                    Red Cannon
                 </a>
             </div>
 

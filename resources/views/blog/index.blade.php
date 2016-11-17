@@ -48,8 +48,8 @@
 								<div class="clearfix"></div>
 							</div>
 						
-						 
-						
+						 <!-- Pagination links -->
+						 {!! $posts->links() !!}
 					</div>	
 				</div>
 				<div class="col-md-4 about-right heading">

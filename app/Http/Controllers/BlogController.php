@@ -8,7 +8,9 @@ use App\Http\Requests;
 
 use App\Post;
 
+//desclare Db namespace here
 
+use DB;
 
 
 class BlogController extends Controller
@@ -20,7 +22,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'DESC')->take(10)->get();
+        //$posts = Post::orderBy('id', 'DESC')->take(10)->get();
+        //$posts = Post::orderBy('id', 'DESC')->get();
+		
+		$posts = DB::table('posts')->paginate(6);
 		
 		$most_read = Post::orderBy('hits', 'Desc')->take(3)->get();
 		
