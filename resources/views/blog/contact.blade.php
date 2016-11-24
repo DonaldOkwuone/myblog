@@ -20,14 +20,17 @@
 						<!----start-contact---->
 					</div>	
 					<div class="col-md-8 contact-right">
+					<form action="#" method="post" >
 						<input placeholder="Name" type="text" required>
 						<input placeholder="Email" type="text" required>
 						<textarea placeholder="Message" required></textarea>
 							<div class="submit-btn">
-								<form>
+								
 									<input type="submit" value="SUBMIT">
-								</form>
+								
 							</div>
+							{{ csrf_field() }} 
+					</form>
 					</div>
 					<div class="clearfix"></div>
 				</div>

@@ -10,7 +10,10 @@
 						<h3>{{$posts[0]->title}}</h3>
 					</div>
 					<div class="about-two">
-						<a href="single.html"><img src="images/c-1.jpg" alt="" /></a>
+						<?php
+							$link_to_image = $posts[0]->image;
+						?>
+						<a href="single.html"><img src=" {{ URL::to('/images/'.$posts[0]->image) }} " alt="{{$posts[0]->title}}" /></a>
 						<p>Posted by <a href="#">{{$posts[0]->author}}</a> on {{$posts[0]->added_on}} <a href="#">comments(2)</a></p>
 						<p> {{$posts[0]->body}}</p>
 						<div class="about-btn">
@@ -31,7 +34,7 @@
 							
 								@foreach($posts as $post)
 									<div class="col-md-6 abt-left">
-										<a href="single.html"><img src="images/c-3.jpg" alt="" /></a>
+										<a href="single.html"><img src="{{ URL::to('/images/'.$posts[0]->image) }}" alt="" /></a>
 										<h6> Arsenal Break</h6>
 										
 										<?php $new_title = substr($post->title , 0, 20); ?>
@@ -56,7 +59,7 @@
 					<div class="abt-1">
 						<h3>ABOUT US</h3>
 						<div class="abt-one">
-							<img src="images/c-2.jpg" alt="" />
+							<img class="img-responsive" src="{{ URL::to('/images/gun.png') }}" alt="" />
 							<p> Need to read up some random ramblings about Arsenal FC., look no further!</p>
 							<div class="a-btn">
 								<a href="{{url('/about-us')}}">Read More</a>
@@ -68,7 +71,7 @@
 						@foreach($most_read as $post)
 							<div class="might-grid">
 								<div class="grid-might">
-									<a href=" {{url('/blog/'.$post->id)}} "><img src="images/c-12.jpg" class="img-responsive" alt=""> </a>
+									<a href=" {{url('/blog/'.$post->id)}} "><img src="{{ URL::to('/images/'.$post->image) }}" class="img-responsive" alt=""> </a>
 								</div>
 								<div class="might-top">
 									<h4><a href="{{url('/blog/'.$post->id)}}"> {{$post->title}} </a></h4>
